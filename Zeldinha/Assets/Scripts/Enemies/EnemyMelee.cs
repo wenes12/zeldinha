@@ -18,9 +18,12 @@ public class EnemyMelee : MonoBehaviour
     private NavMeshAgent navMesh;
     private CapsuleCollider cap;
     public MeshRenderer mesh;
+    public Animator anim;
 
     private bool atkDelay;
     private bool hitting;
+    private bool attacking;
+    private bool walking;
 
     // Start is called before the first frame update
     void Start()
@@ -42,18 +45,31 @@ public class EnemyMelee : MonoBehaviour
             {
                 navMesh.isStopped = false;
 
-                navMesh.SetDestination(player.position);
+                if(!attacking)
+                {
+                    navMesh.SetDestination(player.position);
+                    anim.SetInteger("transition", 2);
+                    walking = true;
+                }
+                
 
                 if (distance <= navMesh.stoppingDistance)
                 {
                     //PERSONAGEM ESTÁ NO RAIO DE ATAQUE
                     StartCoroutine("Attack");
                 }
+                else
+                {
+                    attacking = false;
+                }
             }
             else
             {
                 //personagem está fora do raio de ação
                 navMesh.isStopped = true;
+                anim.SetInteger("transition", 1);
+                walking = false;
+                attacking = false;
             }
         }
     }
@@ -63,6 +79,9 @@ public class EnemyMelee : MonoBehaviour
         if (!atkDelay && !hitting)
         {
             atkDelay = true;
+            attacking = true;
+            walking = false;
+            anim.SetInteger("transition", 3);
             yield return new WaitForSeconds(1f);
             GetPlayer();
             atkDelay = false;
@@ -89,7 +108,9 @@ public class EnemyMelee : MonoBehaviour
         if(totalHeath > 0)
         {
             //inimigo toma dano
+            StopCoroutine("Attack");
             hitting = true;
+            anim.SetInteger("transition", 4);
             StartCoroutine("Recovery");
         }
         else
@@ -111,6 +132,7 @@ public class EnemyMelee : MonoBehaviour
         mesh.enabled = true;
 
         yield return new WaitForSeconds(1f);
+        anim.SetInteger("transition", 1);
         hitting = false;
         atkDelay = false;        
 
