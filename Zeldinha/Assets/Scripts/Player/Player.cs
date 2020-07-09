@@ -66,7 +66,13 @@ public class Player : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 180, 0);
         cine.m_Lens.FieldOfView = 40;
         anim.SetTrigger("chest");
+        Invoke("FinishGame", 2f);
         
+    }
+
+    void FinishGame()
+    {
+        GameController.instance.ShowEnd();
     }
 
     void InputAttack()

@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour
 
     private Player player;
 
+    public GameObject endGame;
+
     [Header("UI")]
     public GameObject checkBt;
 
@@ -74,5 +76,10 @@ public class GameController : MonoBehaviour
     public void ShowGO()
     {
         go.SetActive(true);
+    }
+
+    public void ShowEnd()
+    {
+        endGame.SetActive(true);
     }
 }
