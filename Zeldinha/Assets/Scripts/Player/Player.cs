@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
 
     public Animator anim;
     private AudioSource audioSource;
+    private CinemachineFreeLook cine;
 
     [Header("Atributtes")]
     [SerializeField]
@@ -42,6 +44,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        cine = FindObjectOfType<CinemachineFreeLook>();
         controller = GetComponent<CharacterController>();
         audioSource = GetComponent<AudioSource>();
         cam = Camera.main.transform;
@@ -55,6 +58,14 @@ public class Player : MonoBehaviour
 
             InputAttack();
         }
+        
+    }
+
+    public void OpenChest()
+    {
+        transform.eulerAngles = new Vector3(0, 180, 0);
+        cine.m_Lens.FieldOfView = 40;
+        anim.SetTrigger("chest");
         
     }
 

@@ -12,6 +12,7 @@ public class NPC : MonoBehaviour
     public float rotationSpeed;
 
     private Transform player;
+    private NpcPatrolWaypoint wayPoint;
 
     public LayerMask layer;
 
@@ -20,6 +21,7 @@ public class NPC : MonoBehaviour
     {
         sentence = GetComponent<Sentences>();
         player = FindObjectOfType<Player>().transform;
+        wayPoint = GetComponent<NpcPatrolWaypoint>();
     }
 
     // Update is called once per frame
@@ -38,7 +40,12 @@ public class NPC : MonoBehaviour
             if (c.gameObject.CompareTag("Player") && !reading)
             {
                 LookTarget();
-                GetComponent<NpcPatrolWaypoint>().isSpeech = true;
+                
+                if(wayPoint != null)
+                {
+                    wayPoint.isSpeech = true;
+                }
+
                 GameController.instance.checkBt.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.C))

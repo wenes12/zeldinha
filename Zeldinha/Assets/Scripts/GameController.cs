@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     public GameObject enemies;
     public int totalEnemies;
 
+    public GameObject chest;
+
     private Player player;
 
     [Header("UI")]
@@ -55,6 +57,7 @@ public class GameController : MonoBehaviour
         {
             //mostrar baú
             Debug.Log("bau apareceu!");
+            chest.SetActive(true);
         }
     }
 
