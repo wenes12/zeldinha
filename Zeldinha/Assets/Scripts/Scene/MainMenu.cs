@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            PlayerPrefs.SetString("scene", "Gameplay");
             SceneManager.LoadScene("Scenes/Loading");
         }
     }

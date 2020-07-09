@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Cinemachine;
 
 public class Dialogue : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class Dialogue : MonoBehaviour
 
     public GameObject continueBt;
     public GameObject dialogueObj;
+
+    private CinemachineFreeLook cine;
+
+    private void Start()
+    {
+        cine = FindObjectOfType<CinemachineFreeLook>();
+    }
 
 
     // Start is called before the first frame update
@@ -36,10 +44,13 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator type(string npcName)
     {
+        cine.m_Lens.FieldOfView = 50;
         GameController.instance.isPaused = true;
         nameDisplay.text = npcName;
 
-        foreach(char letter in setences[index].ToCharArray())
+        continueBt.SetActive(false);
+
+        foreach (char letter in setences[index].ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(speed);
@@ -55,8 +66,10 @@ public class Dialogue : MonoBehaviour
             index++;
             textDisplay.text = "";
             StartCoroutine(type(this.npcName));
-        }else
+        }
+        else
         {
+            cine.m_Lens.FieldOfView = 80;
             textDisplay.text = "";            
             GameController.instance.isPaused = false;
             dialogueObj.SetActive(false);

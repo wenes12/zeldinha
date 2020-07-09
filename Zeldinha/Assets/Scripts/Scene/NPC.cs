@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class NPC : MonoBehaviour
 {
     private Sentences sentence;
@@ -9,10 +10,13 @@ public class NPC : MonoBehaviour
 
     public bool reading;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
         sentence = GetComponent<Sentences>();
+    
     }
 
     // Update is called once per frame
