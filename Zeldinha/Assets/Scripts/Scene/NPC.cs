@@ -39,6 +39,7 @@ public class NPC : MonoBehaviour
                     reading = true;
                 }
             }
+            
         }
     }
 

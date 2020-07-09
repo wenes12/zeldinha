@@ -9,6 +9,7 @@ public class EnemyRanged : MonoBehaviour
     [Header("Stats")]
     public float speed;
     public int totalHeath;
+    public int damage;
 
     [Header("Atributtes")]
     public float followDistance;
@@ -18,7 +19,15 @@ public class EnemyRanged : MonoBehaviour
     private Transform player;
     private NavMeshAgent navMesh;
     private CapsuleCollider cap;
-    public MeshRenderer mesh;
+
+    public Animator anim;
+
+    public Transform mesh;
+    public SkinnedMeshRenderer skinMesh;
+    public GameObject fire;
+    public Transform firePoint;
+
+    private bool atkDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +54,7 @@ public class EnemyRanged : MonoBehaviour
                 if(distance <= navMesh.stoppingDistance)
                 {
                     //PERSONAGEM ESTÁ NO RAIO DE ATAQUE
+                    StartCoroutine("Shot");
                     LookTarget();
                 }
             }
@@ -58,7 +68,15 @@ public class EnemyRanged : MonoBehaviour
 
     IEnumerator Shot()
     {
-        yield return new WaitForSeconds(fireRate);
+        if(!atkDelay)
+        {
+            atkDelay = true;
+            anim.SetTrigger("atk");
+            Instantiate(fire, firePoint.position, firePoint.rotation);
+            yield return new WaitForSeconds(fireRate);
+            atkDelay = false;
+        }
+        
     }
 
     void LookTarget()
@@ -80,6 +98,9 @@ public class EnemyRanged : MonoBehaviour
         else
         {
             //inimigo morre
+            anim.SetTrigger("die");
+            cap.enabled = false;
+            Destroy(gameObject, 5f);
         }
     }
 
@@ -87,13 +108,15 @@ public class EnemyRanged : MonoBehaviour
     {
         navMesh.Move(-transform.forward * 3f);
 
-        mesh.enabled = false;
+        mesh.gameObject.SetActive(false);
+        skinMesh.material.color = Color.red;
         yield return new WaitForSeconds(.1f);
-        mesh.enabled = true;
+        mesh.gameObject.SetActive(true);
         yield return new WaitForSeconds(.1f);
-        mesh.enabled = false;
+        mesh.gameObject.SetActive(false);
         yield return new WaitForSeconds(.1f);
-        mesh.enabled = true;
+        mesh.gameObject.SetActive(true);
+        skinMesh.material.color = Color.white;
 
         yield return new WaitForSeconds(1f);
         

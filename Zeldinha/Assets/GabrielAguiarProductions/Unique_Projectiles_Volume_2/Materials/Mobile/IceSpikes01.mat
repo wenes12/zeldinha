@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: IceSpikes01
+  m_Shader: {fileID: 4800000, guid: 7f173d1e98ec5884cbcb1ffe4ec53c52, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 4356798f500d5da4ab251b427856ea61, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FresnelTexture:
+        m_Texture: {fileID: 2800000, guid: 137630b98fb8ca14994287aeddeb8b75, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorBrightness: 1.5
+    - _Cutoff: 0.5
+    - _Distortion: 0.25
+    - _FresnelArea: 1.43
+    - _FresnelPower: 12.06
+    - _Gloss: 1
+    - _Metallic: 1
+    - _Opacity: 0.25
+    - _node_3180: 2.051282
+    m_Colors:
+    - _Color: {r: 0.9264706, g: 0.9634888, b: 1, a: 1}
+    - _FresnelColor: {r: 0.5588235, g: 0.8904665, b: 1, a: 1}

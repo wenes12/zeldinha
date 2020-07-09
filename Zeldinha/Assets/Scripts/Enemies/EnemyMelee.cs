@@ -9,6 +9,7 @@ public class EnemyMelee : MonoBehaviour
     public float speed;
     public int totalHeath;
     public int damage;
+    public float rotationSpeed;
 
     [Header("Atributtes")]
     public float followDistance;
@@ -17,7 +18,8 @@ public class EnemyMelee : MonoBehaviour
     private Transform player;
     private NavMeshAgent navMesh;
     private CapsuleCollider cap;
-    public MeshRenderer mesh;
+    public Transform mesh;
+    public SkinnedMeshRenderer skinMesh;
     public Animator anim;
 
     private bool atkDelay;
@@ -56,7 +58,9 @@ public class EnemyMelee : MonoBehaviour
                 if (distance <= navMesh.stoppingDistance)
                 {
                     //PERSONAGEM ESTÁ NO RAIO DE ATAQUE
+                    LookTarget();
                     StartCoroutine("Attack");
+                    
                 }
                 else
                 {
@@ -74,6 +78,13 @@ public class EnemyMelee : MonoBehaviour
         }
     }
 
+    void LookTarget()
+    {
+        Vector3 direction = (player.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+    }
+
     IEnumerator Attack()
     {
         if (!atkDelay && !hitting)
@@ -82,7 +93,7 @@ public class EnemyMelee : MonoBehaviour
             attacking = true;
             walking = false;
             anim.SetInteger("transition", 3);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.6f);
             GetPlayer();
             atkDelay = false;
         }
@@ -116,6 +127,9 @@ public class EnemyMelee : MonoBehaviour
         else
         {
             //inimigo morre
+            anim.SetTrigger("die");
+            cap.enabled = false;
+            Destroy(gameObject, 5f);
         }
     }
 
@@ -123,13 +137,15 @@ public class EnemyMelee : MonoBehaviour
     {        
         navMesh.Move(-transform.forward * 4f);
 
-        mesh.enabled = false;
+        mesh.gameObject.SetActive(false);
+        skinMesh.material.color = Color.red;
         yield return new WaitForSeconds(.1f);
-        mesh.enabled = true;
+        mesh.gameObject.SetActive(true);
         yield return new WaitForSeconds(.1f);
-        mesh.enabled = false;
+        mesh.gameObject.SetActive(false);
         yield return new WaitForSeconds(.1f);
-        mesh.enabled = true;
+        mesh.gameObject.SetActive(true);
+        skinMesh.material.color = Color.white;
 
         yield return new WaitForSeconds(1f);
         anim.SetInteger("transition", 1);

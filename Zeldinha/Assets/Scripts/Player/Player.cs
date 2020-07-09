@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     private CharacterController controller;
     private Transform cam;
 
+    public Animator anim;
+
     [Header("Atributtes")]
     [SerializeField]
     private float turnSmooth;
@@ -26,6 +28,14 @@ public class Player : MonoBehaviour
     public int damage;
     public float collideRadius;
 
+    [Header("Rerences")]
+    public ParticleSystem hitEffect;
+    public Transform body;
+    public SkinnedMeshRenderer mesh;
+
+    private bool attacking;
+    private bool walking;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -38,6 +48,13 @@ public class Player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.J))
         {
+            if(walking)
+            {
+                walking = false;
+                anim.SetInteger("transition", 0);
+            }
+
+            if(!walking)
             StartCoroutine("Attack");
         }
     }
@@ -53,22 +70,40 @@ public class Player : MonoBehaviour
 
             if(direction.magnitude > 0)
             {
-                float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-                float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, angle, ref turnSmooth, smoothRootTime);
+                if(!attacking)
+                {
+                    float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                    float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, angle, ref turnSmooth, smoothRootTime);
 
-                transform.rotation = Quaternion.Euler(0f, smoothAngle, 0f);
+                    transform.rotation = Quaternion.Euler(0f, smoothAngle, 0f);
 
-                moveDirection = Quaternion.Euler(0f, angle, 0f) * Vector3.forward * speed;
+                    moveDirection = Quaternion.Euler(0f, angle, 0f) * Vector3.forward * speed;
+
+                    anim.SetInteger("transition", 1);
+                    walking = true;
+                }
+                else
+                {
+                    walking = false;
+                    moveDirection = Vector3.zero;
+                }
+               
             }
-            else
+            else if(walking)
             {
+                //player parado
+                
+                anim.SetInteger("transition", 0);
                 moveDirection = Vector3.zero;
+                walking = false;
 
             }
 
             if(Input.GetKeyDown(KeyCode.Space))
-            {
-                moveDirection.y = jumpHeight;
+            {               
+                    moveDirection.y = jumpHeight;                             
+
+                
             }
 
         }
@@ -87,8 +122,12 @@ public class Player : MonoBehaviour
         if(!atkDelay && !isHit)
         {
             atkDelay = true;
+            attacking = true;
+            anim.SetInteger("transition", 2);
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.4f);
+            hitEffect.Play();
+
             GetEnemiesList();
 
             foreach(Transform e in enemiesList)
@@ -108,7 +147,10 @@ public class Player : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
+
+            anim.SetInteger("transition", 0);
+            attacking = false;
             atkDelay = false;
         }
     }
@@ -132,7 +174,9 @@ public class Player : MonoBehaviour
 
         if(lives > 0)
         {
-            //player ainda vivo
+            //player toma dano
+            StopCoroutine("Attack");
+            
             isHit = true;
             StartCoroutine("Recovery");
         }
@@ -146,8 +190,38 @@ public class Player : MonoBehaviour
 
     IEnumerator Recovery()
     {
-        yield return new WaitForSeconds(1f);
+        body.gameObject.SetActive(false);
+        
+        foreach(SkinnedMeshRenderer m in body.GetComponentsInChildren<SkinnedMeshRenderer>())
+        {
+            m.material.color = Color.red;
+        }
 
+        foreach(Material m in mesh.materials)
+        {
+            m.color = Color.red;
+        }
+
+        yield return new WaitForSeconds(.1f);
+        body.gameObject.SetActive(true);
+        yield return new WaitForSeconds(.1f);
+        body.gameObject.SetActive(false);
+        yield return new WaitForSeconds(.1f);
+        body.gameObject.SetActive(true);
+
+        foreach (SkinnedMeshRenderer m in body.GetComponentsInChildren<SkinnedMeshRenderer>())
+        {
+            m.material.color = Color.white;
+        }
+
+        foreach (Material m in mesh.materials)
+        {
+            m.color = Color.white;
+        }
+
+
+        yield return new WaitForSeconds(0.5f);
+        anim.SetInteger("transition", 0);
         isHit = false;
         atkDelay = false;
     }
