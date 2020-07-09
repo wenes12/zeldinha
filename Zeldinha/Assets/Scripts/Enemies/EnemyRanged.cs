@@ -108,6 +108,7 @@ public class EnemyRanged : MonoBehaviour
             anim.SetTrigger("die");
             audioSource.PlayOneShot(GameController.instance.hit);
             cap.enabled = false;
+            GameController.instance.DecreaseEnemies();
             Destroy(gameObject, 5f);
         }
     }

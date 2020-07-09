@@ -8,6 +8,7 @@ public class NpcPatrolWaypoint : MonoBehaviour
     private int destPoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
 
+    public bool isSpeech;
 
     void Start()
     {
@@ -41,7 +42,12 @@ public class NpcPatrolWaypoint : MonoBehaviour
     {
         // Choose the next destination point when the agent gets
         // close to the current one.
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        if (!agent.pathPending && agent.remainingDistance < 0.5f && !isSpeech)
             GotoNextPoint();
+
+        if(isSpeech)
+        {
+            agent.isStopped = true;
+        }
     }
 }

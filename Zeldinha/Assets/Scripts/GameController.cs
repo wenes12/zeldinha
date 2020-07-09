@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
     public bool playerIsAlive;
     public GameObject go;
 
+    public GameObject enemies;
+    public int totalEnemies;
+
     private Player player;
 
     [Header("UI")]
@@ -34,12 +37,25 @@ public class GameController : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         audioSource = GetComponent<AudioSource>();
+
+        totalEnemies = enemies.GetComponentsInChildren<CapsuleCollider>().Length;
     }
 
     // Update is called once per frame
     void Update()
     {
         lives = player.lives;  
+    }
+
+    public void DecreaseEnemies()
+    {
+        totalEnemies--;
+
+        if(totalEnemies <= 0)
+        {
+            //mostrar baú
+            Debug.Log("bau apareceu!");
+        }
     }
 
     void PlayBGM()
