@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 6b1954b2bf32b9447a9d205cc4979b83
+timeCreated: 1456222848
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bed
+    100002: bedpart2
+    100004: cart
+    100006: //RootNode
+    100008: Gate_01
+    100010: Gate_02
+    100012: Stairs
+    100014: statue
+    100016: stones_00
+    100018: stones_01
+    100020: stones_02
+    100022: stones_03
+    100024: stones_04
+    100026: stones_05
+    100028: stones_06
+    100030: table
+    100032: Tent
+    400000: bed
+    400002: bedpart2
+    400004: cart
+    400006: //RootNode
+    400008: Gate_01
+    400010: Gate_02
+    400012: Stairs
+    400014: statue
+    400016: stones_00
+    400018: stones_01
+    400020: stones_02
+    400022: stones_03
+    400024: stones_04
+    400026: stones_05
+    400028: stones_06
+    400030: table
+    400032: Tent
+    2300000: bed
+    2300002: bedpart2
+    2300004: cart
+    2300006: Gate_01
+    2300008: Gate_02
+    2300010: Stairs
+    2300012: statue
+    2300014: stones_00
+    2300016: stones_01
+    2300018: stones_02
+    2300020: stones_03
+    2300022: stones_04
+    2300024: stones_05
+    2300026: stones_06
+    2300028: table
+    2300030: Tent
+    3300000: bed
+    3300002: bedpart2
+    3300004: cart
+    3300006: Gate_01
+    3300008: Gate_02
+    3300010: Stairs
+    3300012: statue
+    3300014: stones_00
+    3300016: stones_01
+    3300018: stones_02
+    3300020: stones_03
+    3300022: stones_04
+    3300024: stones_05
+    3300026: stones_06
+    3300028: table
+    3300030: Tent
+    4300000: bedpart2
+    4300002: Stairs
+    4300004: Gate_01
+    4300006: bed
+    4300008: statue
+    4300010: cart
+    4300012: table
+    4300014: Tent
+    4300016: Gate_02
+    4300018: stones_06
+    4300020: stones_00
+    4300022: stones_01
+    4300024: stones_02
+    4300026: stones_03
+    4300028: stones_04
+    4300030: stones_05
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

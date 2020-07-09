@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: e1c024fc0b68aeb42b8ad0a7790e69da
+timeCreated: 1456215920
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: L_rock_01_max
+    100002: L_rock_02_max
+    100004: L_rock_03_max
+    100006: L_rock_04_max
+    100008: L_rock_05_max
+    100010: L_rock_06_max
+    100012: L_rock_07_max
+    100014: rock_01_max
+    100016: rock_02_max
+    100018: rock_03_max
+    100020: rock_03_max002
+    100022: rock_04_max
+    100024: rock_05_max
+    100026: rock_06_max
+    100028: rock_07_max
+    100030: rock_08_max
+    100032: rock_09_max
+    100034: rocks_Small_004
+    100036: stairsL
+    100038: //RootNode
+    100040: WallE
+    400000: L_rock_01_max
+    400002: L_rock_02_max
+    400004: L_rock_03_max
+    400006: L_rock_04_max
+    400008: L_rock_05_max
+    400010: L_rock_06_max
+    400012: L_rock_07_max
+    400014: rock_01_max
+    400016: rock_02_max
+    400018: rock_03_max
+    400020: rock_03_max002
+    400022: rock_04_max
+    400024: rock_05_max
+    400026: rock_06_max
+    400028: rock_07_max
+    400030: rock_08_max
+    400032: rock_09_max
+    400034: rocks_Small_004
+    400036: stairsL
+    400038: //RootNode
+    400040: WallE
+    2300000: L_rock_01_max
+    2300002: L_rock_02_max
+    2300004: L_rock_03_max
+    2300006: L_rock_04_max
+    2300008: L_rock_05_max
+    2300010: L_rock_06_max
+    2300012: L_rock_07_max
+    2300014: rock_01_max
+    2300016: rock_02_max
+    2300018: rock_03_max
+    2300020: rock_03_max002
+    2300022: rock_04_max
+    2300024: rock_05_max
+    2300026: rock_06_max
+    2300028: rock_07_max
+    2300030: rock_08_max
+    2300032: rock_09_max
+    2300034: rocks_Small_004
+    2300036: stairsL
+    2300038: WallE
+    3300000: L_rock_01_max
+    3300002: L_rock_02_max
+    3300004: L_rock_03_max
+    3300006: L_rock_04_max
+    3300008: L_rock_05_max
+    3300010: L_rock_06_max
+    3300012: L_rock_07_max
+    3300014: rock_01_max
+    3300016: rock_02_max
+    3300018: rock_03_max
+    3300020: rock_03_max002
+    3300022: rock_04_max
+    3300024: rock_05_max
+    3300026: rock_06_max
+    3300028: rock_07_max
+    3300030: rock_08_max
+    3300032: rock_09_max
+    3300034: rocks_Small_004
+    3300036: stairsL
+    3300038: WallE
+    4300000: rocks_Small_004
+    4300002: rock_01_max
+    4300004: rock_02_max
+    4300006: rock_03_max
+    4300008: rock_04_max
+    4300010: rock_05_max
+    4300012: rock_06_max
+    4300014: rock_07_max
+    4300016: rock_08_max
+    4300018: L_rock_01_max
+    4300020: L_rock_02_max
+    4300022: L_rock_03_max
+    4300024: L_rock_04_max
+    4300026: L_rock_05_max
+    4300028: L_rock_06_max
+    4300030: L_rock_07_max
+    4300032: WallE
+    4300034: stairsL
+    4300036: rock_03_max002
+    4300038: rock_09_max
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: 270ea949c83377b4a9e05cad1354d9a0
+timeCreated: 1456212580
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bamboo Tree_001
+    100002: Bamboo Tree_002
+    100004: broken_000
+    100006: broken_001
+    100008: broken_tree_001
+    100010: broken_tree_002
+    100012: broken_tree_003
+    100014: broken_tree_004
+    100016: Bush_000
+    100018: Bush_001
+    100020: Bush_002
+    100022: Bush_003
+    100024: Bush_004
+    100026: Bush_005
+    100028: Bush_006
+    100030: Bush_dead_0000
+    100032: Bush_dead_0001
+    100034: Bush_dead_0002
+    100036: bushFULL_001
+    100038: bushFULL_002
+    100040: bushFULL_003
+    100042: grassV1_001
+    100044: grassV1_002
+    100046: grassV1_003
+    100048: grassV1_004
+    100050: grassVLow1_002
+    100052: low plant _v2_001
+    100054: low_covers_001
+    100056: Low_CoversB_009
+    100058: plant _v1_001
+    100060: plant _v1_002
+    100062: plant _v1_003
+    100064: Tree_Banana_01
+    100066: Tree_Banana_02
+    100068: Tree_High_001
+    100070: Tree_High_002
+    100072: Tree_metapes_01
+    100074: Tree_moglie_001
+    100076: Tree_moglie_002
+    100078: Tree_moglie_003
+    100080: Tree_oakG1_001
+    100082: Tree_oakG_001
+    100084: Tree_oakO_001
+    100086: Tree_oakO_002
+    100088: Tree_Regular1_001
+    100090: Tree_Regular2_001
+    100092: Tree_Regular3_002
+    100094: Tree_thin_001
+    100096: Tree_thin_002
+    100098: Tree_thin_003
+    100100: Tree_water_000
+    100102: Tree_water_001
+    100104: Tree_water_002
+    100106: Tree_water_003
+    100108: Tree_water_004
+    100110: Tree_water_005
+    100112: Tree_water_006
+    100114: //RootNode
+    400000: Bamboo Tree_001
+    400002: Bamboo Tree_002
+    400004: broken_000
+    400006: broken_001
+    400008: broken_tree_001
+    400010: broken_tree_002
+    400012: broken_tree_003
+    400014: broken_tree_004
+    400016: Bush_000
+    400018: Bush_001
+    400020: Bush_002
+    400022: Bush_003
+    400024: Bush_004
+    400026: Bush_005
+    400028: Bush_006
+    400030: Bush_dead_0000
+    400032: Bush_dead_0001
+    400034: Bush_dead_0002
+    400036: bushFULL_001
+    400038: bushFULL_002
+    400040: bushFULL_003
+    400042: grassV1_001
+    400044: grassV1_002
+    400046: grassV1_003
+    400048: grassV1_004
+    400050: grassVLow1_002
+    400052: low plant _v2_001
+    400054: low_covers_001
+    400056: Low_CoversB_009
+    400058: plant _v1_001
+    400060: plant _v1_002
+    400062: plant _v1_003
+    400064: Tree_Banana_01
+    400066: Tree_Banana_02
+    400068: Tree_High_001
+    400070: Tree_High_002
+    400072: Tree_metapes_01
+    400074: Tree_moglie_001
+    400076: Tree_moglie_002
+    400078: Tree_moglie_003
+    400080: Tree_oakG1_001
+    400082: Tree_oakG_001
+    400084: Tree_oakO_001
+    400086: Tree_oakO_002
+    400088: Tree_Regular1_001
+    400090: Tree_Regular2_001
+    400092: Tree_Regular3_002
+    400094: Tree_thin_001
+    400096: Tree_thin_002
+    400098: Tree_thin_003
+    400100: Tree_water_000
+    400102: Tree_water_001
+    400104: Tree_water_002
+    400106: Tree_water_003
+    400108: Tree_water_004
+    400110: Tree_water_005
+    400112: Tree_water_006
+    400114: //RootNode
+    2300000: Bamboo Tree_001
+    2300002: Bamboo Tree_002
+    2300004: broken_tree_001
+    2300006: broken_tree_002
+    2300008: broken_tree_003
+    2300010: broken_tree_004
+    2300012: Bush_000
+    2300014: Bush_001
+    2300016: Bush_002
+    2300018: Bush_003
+    2300020: Bush_004
+    2300022: Bush_005
+    2300024: Bush_006
+    2300026: Bush_dead_0000
+    2300028: Bush_dead_0001
+    2300030: Bush_dead_0002
+    2300032: bushFULL_001
+    2300034: bushFULL_002
+    2300036: bushFULL_003
+    2300038: grassV1_001
+    2300040: grassV1_002
+    2300042: grassV1_003
+    2300044: grassV1_004
+    2300046: grassVLow1_002
+    2300048: low plant _v2_001
+    2300050: low_covers_001
+    2300052: Low_CoversB_009
+    2300054: plant _v1_001
+    2300056: plant _v1_002
+    2300058: plant _v1_003
+    2300060: Tree_Banana_01
+    2300062: Tree_Banana_02
+    2300064: Tree_High_001
+    2300066: Tree_High_002
+    2300068: Tree_metapes_01
+    2300070: Tree_moglie_001
+    2300072: Tree_moglie_002
+    2300074: Tree_moglie_003
+    2300076: Tree_oakG1_001
+    2300078: Tree_oakG_001
+    2300080: Tree_oakO_001
+    2300082: Tree_oakO_002
+    2300084: Tree_Regular1_001
+    2300086: Tree_Regular2_001
+    2300088: Tree_Regular3_002
+    2300090: Tree_thin_001
+    2300092: Tree_thin_002
+    2300094: Tree_thin_003
+    2300096: Tree_water_000
+    2300098: Tree_water_001
+    2300100: Tree_water_002
+    2300102: Tree_water_003
+    2300104: Tree_water_004
+    2300106: Tree_water_005
+    2300108: Tree_water_006
+    3300000: Bamboo Tree_001
+    3300002: Bamboo Tree_002
+    3300004: broken_tree_001
+    3300006: broken_tree_002
+    3300008: broken_tree_003
+    3300010: broken_tree_004
+    3300012: Bush_000
+    3300014: Bush_001
+    3300016: Bush_002
+    3300018: Bush_003
+    3300020: Bush_004
+    3300022: Bush_005
+    3300024: Bush_006
+    3300026: Bush_dead_0000
+    3300028: Bush_dead_0001
+    3300030: Bush_dead_0002
+    3300032: bushFULL_001
+    3300034: bushFULL_002
+    3300036: bushFULL_003
+    3300038: grassV1_001
+    3300040: grassV1_002
+    3300042: grassV1_003
+    3300044: grassV1_004
+    3300046: grassVLow1_002
+    3300048: low plant _v2_001
+    3300050: low_covers_001
+    3300052: Low_CoversB_009
+    3300054: plant _v1_001
+    3300056: plant _v1_002
+    3300058: plant _v1_003
+    3300060: Tree_Banana_01
+    3300062: Tree_Banana_02
+    3300064: Tree_High_001
+    3300066: Tree_High_002
+    3300068: Tree_metapes_01
+    3300070: Tree_moglie_001
+    3300072: Tree_moglie_002
+    3300074: Tree_moglie_003
+    3300076: Tree_oakG1_001
+    3300078: Tree_oakG_001
+    3300080: Tree_oakO_001
+    3300082: Tree_oakO_002
+    3300084: Tree_Regular1_001
+    3300086: Tree_Regular2_001
+    3300088: Tree_Regular3_002
+    3300090: Tree_thin_001
+    3300092: Tree_thin_002
+    3300094: Tree_thin_003
+    3300096: Tree_water_000
+    3300098: Tree_water_001
+    3300100: Tree_water_002
+    3300102: Tree_water_003
+    3300104: Tree_water_004
+    3300106: Tree_water_005
+    3300108: Tree_water_006
+    4300000: Tree_Regular3_002
+    4300002: Tree_thin_001
+    4300004: low plant _v2_001
+    4300006: plant _v1_001
+    4300008: grassV1_001
+    4300010: grassV1_002
+    4300012: grassV1_003
+    4300014: grassVLow1_002
+    4300016: Bush_001
+    4300018: broken_tree_004
+    4300020: Tree_metapes_01
+    4300022: Bush_005
+    4300024: Bush_003
+    4300026: plant _v1_002
+    4300028: plant _v1_003
+    4300030: broken_tree_001
+    4300032: Bamboo Tree_001
+    4300034: Bamboo Tree_002
+    4300036: low_covers_001
+    4300038: Low_CoversB_009
+    4300040: broken_tree_003
+    4300042: broken_tree_002
+    4300044: Tree_Regular2_001
+    4300046: Tree_thin_002
+    4300048: Tree_water_000
+    4300050: Tree_water_001
+    4300052: Tree_water_002
+    4300054: Tree_water_003
+    4300056: Tree_water_004
+    4300058: Tree_water_005
+    4300060: Tree_water_006
+    4300062: grassV1_004
+    4300064: Tree_Regular1_001
+    4300066: Tree_oakO_001
+    4300068: Tree_oakG_001
+    4300070: Tree_oakO_002
+    4300072: Tree_moglie_003
+    4300074: Tree_moglie_001
+    4300076: Tree_moglie_002
+    4300078: Tree_thin_003
+    4300080: Tree_High_001
+    4300082: Tree_oakG1_001
+    4300084: Bush_dead_0002
+    4300086: bushFULL_002
+    4300088: Tree_High_002
+    4300090: Bush_dead_0001
+    4300092: Tree_Banana_02
+    4300094: bushFULL_001
+    4300096: Bush_004
+    4300098: Bush_002
+    4300100: Tree_Banana_01
+    4300102: bushFULL_003
+    4300104: Bush_dead_0000
+    4300106: Bush_006
+    4300108: Bush_000
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

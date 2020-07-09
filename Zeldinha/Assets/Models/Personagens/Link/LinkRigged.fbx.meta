@@ -33,6 +33,24 @@ ModelImporter:
   - first:
       74: 7169148360358428117
     second: Link_LowPoly.001|Running(Deprecated)
+  - first:
+      74: -3100369314251171874
+    second: Idle
+  - first:
+      74: -8407192926269945588
+    second: NormalAttack
+  - first:
+      74: -2154203659297918461
+    second: OpenChest
+  - first:
+      74: -9121621101649706817
+    second: Running
+  - first:
+      74: -8006393464143487503
+    second: SpecialAttack
+  - first:
+      74: 3677010520423194408
+    second: T-Pose
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -162,8 +180,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Idle
-      takeName: Armature|Idle
+      name: Idle
+      takeName: Armature|Armature|Armature|Idle|Armature|Idle
       internalID: 0
       firstFrame: 0
       lastFrame: 76
@@ -191,8 +209,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|NormalAttack
-      takeName: Armature|NormalAttack
+      name: NormalAttack
+      takeName: Armature|Armature|Armature|NormalAttack|Armature|NormalAttack
       internalID: 0
       firstFrame: 0
       lastFrame: 26
@@ -220,8 +238,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|OpenChest
-      takeName: Armature|OpenChest
+      name: OpenChest
+      takeName: Armature|Armature|Armature|OpenChest|Armature|OpenChest
       internalID: 0
       firstFrame: 0
       lastFrame: 20
@@ -249,8 +267,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Running
-      takeName: Armature|Running
+      name: Running
+      takeName: Armature|Armature|Armature|Running|Armature|Running
       internalID: 0
       firstFrame: 0
       lastFrame: 20
@@ -278,8 +296,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|SpecialAttack
-      takeName: Armature|SpecialAttack
+      name: SpecialAttack
+      takeName: Armature|Armature|Armature|SpecialAttack|Armature|SpecialAttack
       internalID: 0
       firstFrame: 0
       lastFrame: 19
@@ -307,8 +325,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|T-pose
-      takeName: Armature|T-pose
+      name: T-Pose
+      takeName: Armature|Armature|Armature|T-pose|Armature|T-pose
       internalID: 0
       firstFrame: 0
       lastFrame: 1
