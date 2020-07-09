@@ -15,6 +15,7 @@ public class EnemyMelee : MonoBehaviour
     public float followDistance;
     public float rangeAtk;
 
+    private AudioSource audioSource;
     private Transform player;
     private NavMeshAgent navMesh;
     private CapsuleCollider cap;
@@ -30,6 +31,7 @@ public class EnemyMelee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         navMesh = GetComponent<NavMeshAgent>();
         cap = GetComponent<CapsuleCollider>();
@@ -38,44 +40,48 @@ public class EnemyMelee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (totalHeath > 0)
+        if(!GameController.instance.playerIsAlive)
         {
-            float distance = Vector3.Distance(player.position, transform.position);
-
-            //personagem está no raio de ação
-            if (distance <= followDistance)
+            if (totalHeath > 0)
             {
-                navMesh.isStopped = false;
+                float distance = Vector3.Distance(player.position, transform.position);
 
-                if(!attacking)
+                //personagem está no raio de ação
+                if (distance <= followDistance)
                 {
-                    navMesh.SetDestination(player.position);
-                    anim.SetInteger("transition", 2);
-                    walking = true;
-                }
-                
+                    navMesh.isStopped = false;
 
-                if (distance <= navMesh.stoppingDistance)
-                {
-                    //PERSONAGEM ESTÁ NO RAIO DE ATAQUE
-                    LookTarget();
-                    StartCoroutine("Attack");
-                    
+                    if (!attacking)
+                    {
+                        navMesh.SetDestination(player.position);
+                        anim.SetInteger("transition", 2);
+                        walking = true;
+                    }
+
+
+                    if (distance <= navMesh.stoppingDistance)
+                    {
+                        //PERSONAGEM ESTÁ NO RAIO DE ATAQUE
+                        LookTarget();
+                        StartCoroutine("Attack");
+
+                    }
+                    else
+                    {
+                        attacking = false;
+                    }
                 }
                 else
                 {
+                    //personagem está fora do raio de ação
+                    navMesh.isStopped = true;
+                    anim.SetInteger("transition", 1);
+                    walking = false;
                     attacking = false;
                 }
             }
-            else
-            {
-                //personagem está fora do raio de ação
-                navMesh.isStopped = true;
-                anim.SetInteger("transition", 1);
-                walking = false;
-                attacking = false;
-            }
         }
+        
     }
 
     void LookTarget()
@@ -120,6 +126,7 @@ public class EnemyMelee : MonoBehaviour
         {
             //inimigo toma dano
             StopCoroutine("Attack");
+            audioSource.PlayOneShot(GameController.instance.hit);
             hitting = true;
             anim.SetInteger("transition", 4);
             StartCoroutine("Recovery");
@@ -128,6 +135,7 @@ public class EnemyMelee : MonoBehaviour
         {
             //inimigo morre
             anim.SetTrigger("die");
+            audioSource.PlayOneShot(GameController.instance.hit);
             cap.enabled = false;
             Destroy(gameObject, 5f);
         }

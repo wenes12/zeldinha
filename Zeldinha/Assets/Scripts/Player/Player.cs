@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private Transform cam;
 
     public Animator anim;
+    private AudioSource audioSource;
 
     [Header("Atributtes")]
     [SerializeField]
@@ -36,26 +37,56 @@ public class Player : MonoBehaviour
     private bool attacking;
     private bool walking;
 
+    private float sAttackTimer;
+    private bool sDelay;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        audioSource = GetComponent<AudioSource>();
         cam = Camera.main.transform;
     }
 
     void Update()
     {
-        Move();
-
-        if(Input.GetKeyDown(KeyCode.J))
+        if (!GameController.instance.playerIsAlive)
         {
-            if(walking)
+            Move();
+
+            InputAttack();
+        }
+        
+    }
+
+    void InputAttack()
+    {
+        //normal
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if (walking)
             {
                 walking = false;
                 anim.SetInteger("transition", 0);
             }
 
-            if(!walking)
-            StartCoroutine("Attack");
+            if (!walking)
+                StartCoroutine("Attack");
+        }
+
+        //especial
+        if(Input.GetKey(KeyCode.J) && !sDelay)
+        {
+            sAttackTimer += Time.deltaTime;
+
+            if(sAttackTimer > 0.5f)
+            {
+                anim.SetTrigger("especial");
+                hitEffect.Play();
+                audioSource.PlayOneShot(GameController.instance.sword);
+                moveDirection = Vector3.zero;
+                sAttackTimer = 0f;
+                sDelay = true;
+            }
         }
     }
 
@@ -124,9 +155,11 @@ public class Player : MonoBehaviour
             atkDelay = true;
             attacking = true;
             anim.SetInteger("transition", 2);
+            moveDirection = Vector3.zero;
 
             yield return new WaitForSeconds(0.4f);
             hitEffect.Play();
+            audioSource.PlayOneShot(GameController.instance.sword);
 
             GetEnemiesList();
 
@@ -152,6 +185,8 @@ public class Player : MonoBehaviour
             anim.SetInteger("transition", 0);
             attacking = false;
             atkDelay = false;
+            sAttackTimer = 0f;
+            sDelay = false;
         }
     }
 
@@ -176,14 +211,16 @@ public class Player : MonoBehaviour
         {
             //player toma dano
             StopCoroutine("Attack");
-            
+            audioSource.PlayOneShot(GameController.instance.hit);
+            attacking = false;
             isHit = true;
             StartCoroutine("Recovery");
         }
         else
         {
             //player morre
-
+            GameController.instance.playerIsAlive = true;
+            GameController.instance.ShowGO();
         }
 
     }

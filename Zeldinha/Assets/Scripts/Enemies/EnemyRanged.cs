@@ -19,6 +19,7 @@ public class EnemyRanged : MonoBehaviour
     private Transform player;
     private NavMeshAgent navMesh;
     private CapsuleCollider cap;
+    private AudioSource audioSource;
 
     public Animator anim;
 
@@ -32,6 +33,7 @@ public class EnemyRanged : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         navMesh = GetComponent<NavMeshAgent>();
         cap = GetComponent<CapsuleCollider>();
@@ -40,30 +42,34 @@ public class EnemyRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(totalHeath > 0)
+        if(!GameController.instance.playerIsAlive)
         {
-            float distance = Vector3.Distance(player.position, transform.position);
-
-            //personagem está no raio de ação
-            if(distance <= followDistance)
+            if (totalHeath > 0)
             {
-                navMesh.isStopped = false;
+                float distance = Vector3.Distance(player.position, transform.position);
 
-                navMesh.SetDestination(player.position);
-
-                if(distance <= navMesh.stoppingDistance)
+                //personagem está no raio de ação
+                if (distance <= followDistance)
                 {
-                    //PERSONAGEM ESTÁ NO RAIO DE ATAQUE
-                    StartCoroutine("Shot");
-                    LookTarget();
+                    navMesh.isStopped = false;
+
+                    navMesh.SetDestination(player.position);
+
+                    if (distance <= navMesh.stoppingDistance)
+                    {
+                        //PERSONAGEM ESTÁ NO RAIO DE ATAQUE
+                        StartCoroutine("Shot");
+                        LookTarget();
+                    }
+                }
+                else
+                {
+                    //personagem está fora do raio de ação
+                    navMesh.isStopped = true;
                 }
             }
-            else
-            {
-                //personagem está fora do raio de ação
-                navMesh.isStopped = true;
-            }
         }
+       
     }
 
     IEnumerator Shot()
@@ -93,12 +99,14 @@ public class EnemyRanged : MonoBehaviour
         if (totalHeath > 0)
         {
             //inimigo toma dano
+            audioSource.PlayOneShot(GameController.instance.hit);
             StartCoroutine("Recovery");
         }
         else
         {
             //inimigo morre
             anim.SetTrigger("die");
+            audioSource.PlayOneShot(GameController.instance.hit);
             cap.enabled = false;
             Destroy(gameObject, 5f);
         }
