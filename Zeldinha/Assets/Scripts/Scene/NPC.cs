@@ -48,7 +48,7 @@ public class NPC : MonoBehaviour
 
                 GameController.instance.checkBt.SetActive(true);
 
-                if (Input.GetKeyDown(KeyCode.C))
+                if (Input.GetKeyDown(KeyCode.C) || Input.GetButtonDown("Fire1"))
                 {
                     
                     GameController.instance.checkBt.SetActive(false);

@@ -78,7 +78,8 @@ public class EnemyRanged : MonoBehaviour
         {
             atkDelay = true;
             anim.SetTrigger("atk");
-            Instantiate(fire, firePoint.position, firePoint.rotation);
+            yield return new WaitForSeconds(0.3f);
+            Instantiate(fire, firePoint.position + new Vector3(0,0,-1f), firePoint.rotation);
             yield return new WaitForSeconds(fireRate);
             atkDelay = false;
         }

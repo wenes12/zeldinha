@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     public ParticleSystem hitEffect;
     public Transform body;
     public SkinnedMeshRenderer mesh;
+    public GameObject sword;
+    public GameObject shield;
 
     private bool attacking;
     private bool walking;
@@ -52,7 +54,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!GameController.instance.playerIsAlive)
+        if (!GameController.instance.playerIsAlive && !GameController.instance.isPaused)
         {
             Move();
 
@@ -63,6 +65,8 @@ public class Player : MonoBehaviour
 
     public void OpenChest()
     {
+        sword.SetActive(false);
+        shield.SetActive(false);
         transform.eulerAngles = new Vector3(0, 180, 0);
         cine.m_Lens.FieldOfView = 40;
         anim.SetTrigger("chest");
@@ -109,7 +113,7 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        if(controller.isGrounded && !GameController.instance.isPaused)
+        if(controller.isGrounded)
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
@@ -210,7 +214,7 @@ public class Player : MonoBehaviour
     void GetEnemiesList()
     {
         enemiesList.Clear();
-        foreach(Collider c in Physics.OverlapSphere((transform.position + transform.forward * collideRadius), collideRadius))
+        foreach(Collider c in Physics.OverlapSphere((transform.position + transform.forward), collideRadius))
         {
             if(c.gameObject.CompareTag("Enemy"))
             {
