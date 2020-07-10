@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
     void InputAttack()
     {
         //normal
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) || Input.GetButtonDown("Fire1"))
         {
             if (walking)
             {
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
         }
 
         //especial
-        if(Input.GetKey(KeyCode.J) && !sDelay)
+        if(Input.GetKey(KeyCode.J) || Input.GetButton("Fire1") && !sDelay)
         {
             sAttackTimer += Time.deltaTime;
 
