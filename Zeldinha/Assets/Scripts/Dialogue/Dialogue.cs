@@ -69,7 +69,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            cine.m_Lens.FieldOfView = 80;
+            cine.m_Lens.FieldOfView = 60;
             textDisplay.text = "";            
             GameController.instance.isPaused = false;
             dialogueObj.SetActive(false);
